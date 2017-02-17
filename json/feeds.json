@@ -1,0 +1,93 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "6fcc80a3027c3b45dc79cfc41b7d47f6dc419622",
+ "discoveryVersion": "v1",
+ "id": "feed:0.1",
+ "name": "feed",
+ "version": "0.1",
+ "revision": "0",
+ "description": "Feed REST API",
+ "protocol": "rest",
+ "baseUrl": "http://localhost:8080/feed/0.1/",
+ "basePath": "/feed/0.1/",
+ "rootUrl": "http://localhost:8080/",
+ "servicePath": "feed/0.1/",
+ "parameters": {},
+ "schemas": {
+  "StringResponse": {
+   "id": "StringResponse",
+   "type": "object",
+   "properties": {
+    "value": {
+     "type": "string"
+    }
+   }
+  },
+  "MediaMessage": {
+   "id": "MediaMessage",
+   "type": "object",
+   "properties": {
+    "bytes": {
+     "type": "array",
+     "items": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "updated": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "contentType": {
+     "type": "string"
+    },
+    "cacheControl": {
+     "type": "string"
+    },
+    "contentEncoding": {
+     "type": "string"
+    },
+    "contentLanguage": {
+     "type": "string"
+    },
+    "md5Hash": {
+     "type": "string"
+    },
+    "metadata": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "methods": {},
+ "resources": {
+  "feeds": {
+   "methods": {
+    "getFeeds": {
+     "id": "FeedAPI.feeds.getFeeds",
+     "path": "feeds/",
+     "httpMethod": "GET",
+     "parameters": {},
+     "parameterOrder": [],
+     "response": {
+      "$ref": "StringResponse"
+     }
+    },
+    "importFeeds": {
+     "id": "FeedAPI.feeds.importFeeds",
+     "path": "feeds/import/",
+     "httpMethod": "PUT",
+     "parameters": {},
+     "parameterOrder": [],
+     "request": {
+      "$ref": "MediaMessage"
+     }
+    }
+   },
+   "resources": {}
+  }
+ }
+}
