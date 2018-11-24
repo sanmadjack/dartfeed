@@ -1,0 +1,32 @@
+name: 'dartfeed'
+version: 0.0.1
+description: A web server built using the shelf package.
+#author: testuset <email@example.com>
+#homepage: https://www.example.com
+
+environment:
+  sdk: '>=1.19.0 <2.0.0'
+
+dependencies:
+  args: any
+  shelf: ^0.6.0
+  rpc: ^0.5.7
+  shelf_exception_handler: ^0.1.0
+  shelf_route: ^0.14.3
+  shelf_rpc: ^0.0.3
+  logging_handlers: ^0.8.0
+  meta: ^1.0.4
+  uuid: any
+  mongo_dart: ^0.2.10
+  xml: ^2.5.0
+  connection_pool: ^0.1.2
+  dart_feed: any
+  di: any
+  shared:
+    path: ../shared/
+  options_file: ^0.11.0
+  http_server: ^0.9.6
+
+dependency_overrides:
+  rpc:
+    git: git://github.com/dart-lang/rpc.git
